@@ -29,9 +29,9 @@ status-website:
     - title: "服務狀態"
       href: "/"
     - title: "社團首頁"
-      href: "https://your-club-website.com"
+      href: "https://tncvsitc.duckdun.org"
     - title: "聯絡我們"
-      href: "mailto:contact@example.com"
+      href: "mailto:tncvsitc@gmail.com"
 
 # 設定預設主題（light, dark, 或 system）
 theme: system
