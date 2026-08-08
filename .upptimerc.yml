@@ -1,3 +1,13 @@
+# 語言設定為繁體中文
+locale: zh-tw
+
+# 網頁標題與介紹
+title: "系統服務狀態監控"
+introTitle: "這是我們的服務即時運行狀態"
+introMessage: "本頁面定期自動更新一次，提供最即時的服務可用性報告。"
+
+logoUrl: /img/logo_icon.png
+
 # Change these first
 owner: tncvsitc
 repo: tncvsitc.github.io
@@ -16,10 +26,26 @@ status-website:
   introTitle: "**Upptime** is the open-source uptime monitor and status page, powered entirely by GitHub."
   introMessage: This is a sample status page which uses **real-time** data from our [GitHub repository](https://github.com/upptime/upptime). No server required — just GitHub Actions, Issues, and Pages. [**Get your own for free**](https://github.com/upptime/upptime)
   navbar:
-    - title: 狀態
-      href: /
-    - title: 社團主頁
-      href: https://tncvsitc.duckdns.org
+    - title: "服務狀態"
+      href: "/"
+    - title: "社團首頁"
+      href: "https://your-club-website.com"
+    - title: "聯絡我們"
+      href: "mailto:contact@example.com"
+
+# 設定預設主題（light, dark, 或 system）
+theme: system
+
+# 自訂 CSS（例如改變背景顏色或字體）
+customCSS: |
+  body {
+    font-family: "Microsoft JhengHei", sans-serif;
+  }
+  .bg-gradient {
+    background: linear-gradient(90deg, #1e3c72 0%, #2a5298 100%) !important;
+  }
+
+  
 
 # Upptime also supports notifications, assigning issues, and more
 # See https://upptime.js.org/docs/configuration
