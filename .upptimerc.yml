@@ -1,16 +1,13 @@
-# Change these first
 owner: tncvsitc
 repo: tncvsitc.github.io
 
-# 監控的網站列表
 sites:
   - name: 社團網站
     url: https://tncvsitc.duckdns.org
 
-# 狀態網頁設定
 status-website:
-  # 👇👇👇 加入這行！強制指定為根目錄，CSS 就不會 404 了 👇👇👇
-  baseUrl: /
+  # 👇👇👇 改用這行（填入你的 github.io 完整網址），並把 baseUrl 刪除 👇👇👇
+  cname: tncvsitc.github.io
 
   name: TNCVS ITC Status
   introTitle: 南商資研服務狀態
@@ -35,7 +32,7 @@ status-website:
       background: linear-gradient(90deg, #1e3c72 0%, #2a5298 100%) !important;
     }
 
-# 繁體中文語系
+# 繁體中文語系 (保留原本設定)
 i18n:
   activeIncidents: 進行中的事件
   allSystemsOperational: 所有系統運作正常
