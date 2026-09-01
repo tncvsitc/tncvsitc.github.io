@@ -20,7 +20,7 @@ status-website:
   name: TNCVS ITC Status
   introTitle: 南商資研服務狀態
   # 👇 透過小腳本自動將頁面上的 undefined 修正為 ms 👇
-  introMessage: 這裡是南商資研社系統服務狀態資訊頁面，由 Upptime 技術支援。<script>setInterval(()=>{document.querySelectorAll('.data').forEach(e=>{if(e.innerHTML.includes('undefined'))e.innerHTML=e.innerHTML.replace('undefined','ms')})},200);</script>
+  introMessage: 這裡是南商資研社系統服務狀態資訊頁面，由 Upptime 技術支援。<script>setInterval(()=>{document.querySelectorAll('.live-status div').forEach(e=>{if(e.innerHTML.includes('undefined'))e.innerHTML=e.innerHTML.replace('undefined','ms')})},200);</script>
   
   logoUrl: https://raw.githubusercontent.com/tncvsitc/tncvsitc.github.io/master/img/logo_icon.png
 
