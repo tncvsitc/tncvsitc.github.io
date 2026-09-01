@@ -1,30 +1,25 @@
-# 語言設定為繁體中文
-locale: zh-tw
-
-# 網頁標題與介紹
-title: "TNCVS ITC 系統服務狀態監控"
-introTitle: "這是我們的服務即時運行狀態"
-introMessage: "本頁面定期自動更新，提供最即時的服務可用性報告。"
-
-logoUrl: /img/logo_icon.png
-
 # Change these first
 owner: tncvsitc
 repo: tncvsitc.github.io
 
+# 監控的網站列表
 sites:
   - name: 社團網站
     url: https://tncvsitc.duckdns.org
 
+# 狀態網頁的詳細設定
 status-website:
-  # Add your custom domain name, or remove the `cname` line if you don't have a domain
-  # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
-  cname: demo.upptime.js.org
-  # baseUrl: /your-repo-name
-  logoUrl: https://tncvsitc.duckdns.org/img/logo_icon.png
+  # ⚠️ 關鍵修正 1：若沒有要綁定「自訂網域」，請註解或刪除 cname
+  # 如果你有自己的網域（例如 status.tncvsitc.duckdns.org）才填寫，否則保持註解
+  # cname: status.yourdomain.com
+
+  # 網站標題與介紹
   name: TNCVS ITC Status
   introTitle: 南商資研服務狀態
   introMessage: 這裡是南商資研社系統服務狀態資訊頁面，由 Upptime 技術支援
+  logoUrl: https://tncvsitc.duckdns.org/img/logo_icon.png
+
+  # 導覽列連結
   navbar:
     - title: "服務狀態"
       href: "/"
@@ -33,19 +28,26 @@ status-website:
     - title: "聯絡我們"
       href: "mailto:tncvsitc@gmail.com"
 
-# 設定預設主題（light, dark, 或 system）
-theme: system
+  # ⚠️ 關鍵修正 2：theme 與 customCSS 必須放在 status-website 區塊內
+  theme: system
 
-# 自訂 CSS（例如改變背景顏色或字體）
-customCSS: |
-  body {
-    font-family: "Microsoft JhengHei", sans-serif;
-  }
-  .bg-gradient {
-    background: linear-gradient(90deg, #1e3c72 0%, #2a5298 100%) !important;
-  }
+  customCSS: |
+    body {
+      font-family: "Microsoft JhengHei", sans-serif;
+    }
+    .bg-gradient {
+      background: linear-gradient(90deg, #1e3c72 0%, #2a5298 100%) !important;
+    }
 
-  
-
-# Upptime also supports notifications, assigning issues, and more
-# See https://upptime.js.org/docs/configuration
+# 支援繁體中文語系 (若無特定覆寫，預設會使用系統語系)
+i18n:
+  activeIncidents: 進行中的事件
+  allSystemsOperational: 所有系統運作正常
+  incidentReport: 事件報告
+  incidentDetails: 事件詳情
+  url: 網址
+  status: 狀態
+  history: 歷史記錄
+  ms: 毫秒
+  responseTime: 回應時間
+  uptime: 在線率
