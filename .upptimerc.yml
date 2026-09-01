@@ -99,7 +99,7 @@ i18n:
   up: 運作正常
   down: 停止服務
   degraded: 效能降低
-  overallUptime: "整體在線率："
+  overallUptime: "整體在線率：$UPTIME%"
   responseTime: "平均回應時間"
   averageResponseTime: "平均回應時間"
   averageResponse: "平均回應時間"
