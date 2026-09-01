@@ -19,9 +19,9 @@ status-website:
 
   name: TNCVS ITC Status
   introTitle: 南商資研服務狀態
-  introMessage: 這裡是南商資研社系統服務狀態資訊頁面，由 Upptime 技術支援。
-
-  # 👇 1. 已修正為 master 分支（若你的分支是 main 請改回 main）
+  # 👇 透過小腳本自動將頁面上的 undefined 修正為 ms 👇
+  introMessage: 這裡是南商資研社系統服務狀態資訊頁面，由 Upptime 技術支援。<script>setInterval(()=>{document.querySelectorAll('.data').forEach(e=>{if(e.innerHTML.includes('undefined'))e.innerHTML=e.innerHTML.replace('undefined','ms')})},200);</script>
+  
   logoUrl: https://raw.githubusercontent.com/tncvsitc/tncvsitc.github.io/master/img/logo_icon.png
 
   navbar:
@@ -48,29 +48,32 @@ status-website:
       color: #ffffff !important;
     }
 
-    /* 👇 3. 精準替換詳細頁面寫死的 h3 英文標題 👇 */
-    #sapper h3 {
-      color: transparent !important;
-      position: relative;
-      font-size: 1.25rem !important;
+    /* 👇👇👇 根據實際 HTML 標籤精準中文化詳細頁面 👇👇👇 */
+    /* 1. 替換 Overall uptime 與 Average response */
+    dl dt {
+      font-size: 0 !important;
     }
-    #sapper h3:nth-of-type(1)::before {
+    dl dt::after {
+      font-size: 1rem !important;
+      font-weight: bold;
+    }
+    dl dt:nth-of-type(1)::after {
       content: "整體在線率";
-      color: #ffffff;
-      position: absolute;
-      left: 0;
     }
-    #sapper h3:nth-of-type(2)::before {
+    dl dt:nth-of-type(2)::after {
       content: "平均回應時間";
-      color: #ffffff;
-      position: absolute;
-      left: 0;
     }
-    #sapper h3:nth-of-type(3)::before {
+
+    /* 2. 替換圖表標題 7-day response time */
+    main section:has(canvas) h2,
+    main section h2:has(+ canvas) {
+      font-size: 0 !important;
+    }
+    main section:has(canvas) h2::after,
+    main section h2:has(+ canvas)::after {
+      font-size: 1.5rem !important;
+      font-weight: bold;
       content: "近 7 天回應時間趨勢";
-      color: #ffffff;
-      position: absolute;
-      left: 0;
     }
 
 # 繁體中文語系
@@ -96,13 +99,10 @@ i18n:
   up: 運作正常
   down: 停止服務
   degraded: 效能降低
-
-  # 👇 2. 移除多餘的 %，並補齊平均回應時間翻譯
-  overallUptime: "整體在線率：$UPTIME"
-  responseTime: "平均回應時間：$LATENCY ms"
+  overallUptime: "整體在線率："
+  responseTime: "平均回應時間"
   averageResponseTime: "平均回應時間"
   averageResponse: "平均回應時間"
-  
   responseTimeGraph: 回應時間趨勢
   liveStatus: 即時狀態
   uptime: 在線率
