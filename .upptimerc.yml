@@ -21,7 +21,6 @@ status-website:
     - title: "聯絡我們"
       href: "mailto:tncvsitc@gmail.com"
 
-  theme: light
 
   customCSS: |
     body {
