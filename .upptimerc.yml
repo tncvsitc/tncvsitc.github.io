@@ -6,7 +6,6 @@ sites:
     url: https://tncvsitc.duckdns.org
 
 status-website:
-  # 👇👇👇 改用這行（填入你的 github.io 完整網址），並把 baseUrl 刪除 👇👇👇
   cname: tncvsitc.github.io
 
   name: TNCVS ITC Status
@@ -21,8 +20,6 @@ status-website:
       href: "https://tncvsitc.duckdns.org"
     - title: "聯絡我們"
       href: "mailto:tncvsitc@gmail.com"
-
-  theme: system
 
   customCSS: |
     body {
