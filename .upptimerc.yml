@@ -32,8 +32,6 @@ status-website:
     - title: "聯絡我們"
       href: "mailto:tncvsitc@gmail.com"
 
-  theme: light
-
   customCSS: |
     body {
       font-family: "Microsoft JhengHei", -apple-system, BlinkMacSystemFont, sans-serif;
