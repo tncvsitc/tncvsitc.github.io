@@ -1,17 +1,10 @@
-owner: tncvsitc
-repo: tncvsitc.github.io
-
-sites:
-  - name: 社團網站
-    url: https://tncvsitc.duckdns.org
-
 status-website:
   cname: tncvsitc.github.io
 
   name: TNCVS ITC Status
   introTitle: 南商資研服務狀態
   introMessage: 這裡是南商資研社系統服務狀態資訊頁面，由 Upptime 技術支援。
-  logoUrl: https://github.com/tncvsitc/tncvsitc.github.io/blob/master/img/logo_icon.png?raw=true
+  logoUrl: https://raw.githubusercontent.com/tncvsitc/tncvsitc.github.io/main/img/logo_icon.png
 
   navbar:
     - title: "服務狀態"
@@ -21,12 +14,14 @@ status-website:
     - title: "聯絡我們"
       href: "mailto:tncvsitc@gmail.com"
 
+  theme: light
+
   customCSS: |
     body {
       font-family: "Microsoft JhengHei", -apple-system, BlinkMacSystemFont, sans-serif;
     }
     
-    /* 把原本的 .bg-gradient 改成 header（Upptime 頂部的導覽列） */
+    /* 頂部導覽列樣式 */
     header {
       background: linear-gradient(90deg, #1e3c72 0%, #2a5298 100%) !important;
       padding: 15px !important;
@@ -35,21 +30,30 @@ status-website:
       color: #ffffff !important;
     }
 
-# 繁體中文語系完整設定
-i18n:
-  # 狀態標籤 (詳細頁面右上角的 Up / Down / Degraded)
-  up: 運作正常
-  down: 停止服務
-  degraded: 效能降低
+    /* 👇👇👇 將詳細頁面寫死的英文標題替換為中文 👇👇👇 */
+    /* 替換 Overall uptime */
+    .f-overall-uptime, h2:has(+ p), h2:has(+ div) {
+      font-size: 0 !important;
+    }
+    main h2 {
+      font-size: 0 !important;
+    }
+    main h2::after {
+      font-size: 1.25rem !important;
+    }
+    /* 針對詳細頁的英文替換 */
+    main h2:nth-of-type(1)::after {
+      content: "整體在線率" !important;
+    }
+    main h2:nth-of-type(2)::after {
+      content: "平均回應時間" !important;
+    }
+    main h2:nth-of-type(3)::after {
+      content: "近 7 天回應時間趨勢" !important;
+    }
 
-  # 詳細頁面的指標名稱
-  overallUptime: 整體在線率
-  averageResponse: 平均回應時間
-  averageResponseTime: 平均回應時間
-  responseTime: 回應時間
-  responseTimeGraph: 回應時間趨勢圖
-  
-  # 首頁與其他通用翻譯
+# 繁體中文語系 (修復變數與 undefined 問題)
+i18n:
   activeIncidents: 進行中的事件
   allSystemsOperational: 所有系統運作正常
   incidentReport: 事件報告
@@ -61,14 +65,22 @@ i18n:
   someSystemsDegraded: 系統異常
   allSystemsDown: 所有系統中斷服務
   someSystemsDown: 系統部分停機
+  degradedPerformance: 效能降低
   partialOutage: 部分中斷
   majorOutage: 嚴重中斷
   unknownStatus: 狀態未知
   operational: 運作正常
   status: 狀態
   history: 歷史紀錄
+  up: 運作正常
+  down: 停止服務
+  degraded: 效能降低
+  overallUptime: "整體在線率：$UPTIME%"
+  responseTime: "平均回應時間：$LATENCY ms"
+  responseTimeGraph: 回應時間趨勢
   liveStatus: 即時狀態
   uptime: 在線率
+  ms: "ms"
   pastScheduledMaintenance: 過去的預排維護
   scheduledMaintenance: 預排維護中
   scheduledMaintenanceSummary: 預計於 $DATE 進行維護，預計耗時 $DURATION 分鐘
