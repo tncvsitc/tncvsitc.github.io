@@ -1,4 +1,3 @@
-# Change these first
 owner: tncvsitc
 repo: tncvsitc.github.io
 
@@ -7,16 +6,12 @@ sites:
   - name: 社團網站
     url: https://tncvsitc.duckdns.org
 
-# 狀態網頁的詳細設定
+# 狀態網頁設定
 status-website:
-  # ⚠️ 關鍵修正 1：若沒有要綁定「自訂網域」，請註解或刪除 cname
-  # 如果你有自己的網域（例如 status.tncvsitc.duckdns.org）才填寫，否則保持註解
-  # cname: status.yourdomain.com
-
-  # 網站標題與介紹
+  # 網頁標題與介紹
   name: TNCVS ITC Status
   introTitle: 南商資研服務狀態
-  introMessage: 這裡是南商資研社系統服務狀態資訊頁面，由 Upptime 技術支援
+  introMessage: 這裡是南商資研社系統服務狀態資訊頁面，由 Upptime 技術支援。
   logoUrl: https://tncvsitc.duckdns.org/img/logo_icon.png
 
   # 導覽列連結
@@ -28,26 +23,49 @@ status-website:
     - title: "聯絡我們"
       href: "mailto:tncvsitc@gmail.com"
 
-  # ⚠️ 關鍵修正 2：theme 與 customCSS 必須放在 status-website 區塊內
   theme: system
 
   customCSS: |
     body {
-      font-family: "Microsoft JhengHei", sans-serif;
+      font-family: "Microsoft JhengHei", -apple-system, BlinkMacSystemFont, sans-serif;
     }
     .bg-gradient {
       background: linear-gradient(90deg, #1e3c72 0%, #2a5298 100%) !important;
     }
 
-# 支援繁體中文語系 (若無特定覆寫，預設會使用系統語系)
+# 完整繁體中文語系對照表 (i18n)
 i18n:
   activeIncidents: 進行中的事件
   allSystemsOperational: 所有系統運作正常
   incidentReport: 事件報告
-  incidentDetails: 事件詳情
-  url: 網址
+  activeIncidentsURL: /#incidents
+  allSystemsOperationalURL: /
+  incidentDetails: 查看事件詳情
+  graphs: 統計圖表
+  allSystemsDegraded: 部分系統效能降低
+  someSystemsDegraded: 系統異常
+  allSystemsDown: 所有系統中斷服務
+  someSystemsDown: 系統部分停機
+  degradedPerformance: 效能降低
+  partialOutage: 部分中斷
+  majorOutage: 嚴重中斷
+  unknownStatus: 狀態未知
+  operational: 運作正常
   status: 狀態
-  history: 歷史記錄
-  ms: 毫秒
-  responseTime: 回應時間
+  history: 歷史紀錄
+  overallUptime: "在線率：$UPTIME%"
+  responseTime: "回應時間：$LATENCY ms"
+  responseTimeGraph: 回應時間趨勢
+  liveStatus: 即時狀態
   uptime: 在線率
+  pastScheduledMaintenance: 過去的預排維護
+  scheduledMaintenance: 預排維護中
+  scheduledMaintenanceSummary: 預計於 $DATE 進行維護，預計耗時 $DURATION 分鐘
+  startedAt: 開始時間：$DATE
+  duration: 耗時：$DURATION 分鐘
+  resolvedIn: 解決耗時：$DURATION 分鐘
+  loading: 載入中...
+  rateLimitExceededTitle: 請求過於頻繁
+  rateLimitExceededIntro: 您在短時間內發送了太多請求，請稍候再試。
+  links: 相關連結
+  url: 網址
