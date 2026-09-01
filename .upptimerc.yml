@@ -1,6 +1,15 @@
 owner: tncvsitc
 repo: tncvsitc.github.io
 
+workflowSchedule:
+  graphs: "0 0 * * *"
+  responseTime: "0 23 * * *"
+  staticSite: "0 1 * * *"
+  summary: "0 0 * * *"
+  updateTemplate: "0 0 * * *"
+  updates: "0 3 * * *"
+  uptime: "*/5 * * * *"
+
 sites:
   - name: 社團網站
     url: https://tncvsitc.duckdns.org
@@ -11,7 +20,9 @@ status-website:
   name: TNCVS ITC Status
   introTitle: 南商資研服務狀態
   introMessage: 這裡是南商資研社系統服務狀態資訊頁面，由 Upptime 技術支援。
-  logoUrl: https://raw.githubusercontent.com/tncvsitc/tncvsitc.github.io/main/img/logo_icon.png
+
+  # 👇 1. 已修正為 master 分支（若你的分支是 main 請改回 main）
+  logoUrl: https://raw.githubusercontent.com/tncvsitc/tncvsitc.github.io/master/img/logo_icon.png
 
   navbar:
     - title: "服務狀態"
@@ -21,6 +32,7 @@ status-website:
     - title: "聯絡我們"
       href: "mailto:tncvsitc@gmail.com"
 
+  theme: light
 
   customCSS: |
     body {
@@ -36,29 +48,32 @@ status-website:
       color: #ffffff !important;
     }
 
-    /* 👇👇👇 將詳細頁面寫死的英文標題替換為中文 👇👇👇 */
-    /* 替換 Overall uptime */
-    .f-overall-uptime, h2:has(+ p), h2:has(+ div) {
-      font-size: 0 !important;
-    }
-    main h2 {
-      font-size: 0 !important;
-    }
-    main h2::after {
+    /* 👇 3. 精準替換詳細頁面寫死的 h3 英文標題 👇 */
+    #sapper h3 {
+      color: transparent !important;
+      position: relative;
       font-size: 1.25rem !important;
     }
-    /* 針對詳細頁的英文替換 */
-    main h2:nth-of-type(1)::after {
-      content: "整體在線率" !important;
+    #sapper h3:nth-of-type(1)::before {
+      content: "整體在線率";
+      color: #ffffff;
+      position: absolute;
+      left: 0;
     }
-    main h2:nth-of-type(2)::after {
-      content: "平均回應時間" !important;
+    #sapper h3:nth-of-type(2)::before {
+      content: "平均回應時間";
+      color: #ffffff;
+      position: absolute;
+      left: 0;
     }
-    main h2:nth-of-type(3)::after {
-      content: "近 7 天回應時間趨勢" !important;
+    #sapper h3:nth-of-type(3)::before {
+      content: "近 7 天回應時間趨勢";
+      color: #ffffff;
+      position: absolute;
+      left: 0;
     }
 
-# 繁體中文語系 (修復變數與 undefined 問題)
+# 繁體中文語系
 i18n:
   activeIncidents: 進行中的事件
   allSystemsOperational: 所有系統運作正常
@@ -81,8 +96,13 @@ i18n:
   up: 運作正常
   down: 停止服務
   degraded: 效能降低
-  overallUptime: "整體在線率：$UPTIME%"
+
+  # 👇 2. 移除多餘的 %，並補齊平均回應時間翻譯
+  overallUptime: "整體在線率：$UPTIME"
   responseTime: "平均回應時間：$LATENCY ms"
+  averageResponseTime: "平均回應時間"
+  averageResponse: "平均回應時間"
+  
   responseTimeGraph: 回應時間趨勢
   liveStatus: 即時狀態
   uptime: 在線率
