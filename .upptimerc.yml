@@ -1,3 +1,10 @@
+owner: tncvsitc
+repo: tncvsitc.github.io
+
+sites:
+  - name: 社團網站
+    url: https://tncvsitc.duckdns.org
+
 status-website:
   cname: tncvsitc.github.io
 
