@@ -1,3 +1,4 @@
+# Change these first
 owner: tncvsitc
 repo: tncvsitc.github.io
 
@@ -8,13 +9,14 @@ sites:
 
 # 狀態網頁設定
 status-website:
-  # 網頁標題與介紹
+  # 👇👇👇 加入這行！強制指定為根目錄，CSS 就不會 404 了 👇👇👇
+  baseUrl: /
+
   name: TNCVS ITC Status
   introTitle: 南商資研服務狀態
   introMessage: 這裡是南商資研社系統服務狀態資訊頁面，由 Upptime 技術支援。
   logoUrl: https://tncvsitc.duckdns.org/img/logo_icon.png
 
-  # 導覽列連結
   navbar:
     - title: "服務狀態"
       href: "/"
@@ -33,7 +35,7 @@ status-website:
       background: linear-gradient(90deg, #1e3c72 0%, #2a5298 100%) !important;
     }
 
-# 完整繁體中文語系對照表 (i18n)
+# 繁體中文語系
 i18n:
   activeIncidents: 進行中的事件
   allSystemsOperational: 所有系統運作正常
